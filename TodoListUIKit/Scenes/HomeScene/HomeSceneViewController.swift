@@ -8,7 +8,8 @@
 import UIKit
 
 protocol HomeSceneViewControllerInput: AnyObject {
-    func showTodo(_ todo: HomeSceneModel.Fetch.ViewModel)
+    func showTodo(_ viewModel: HomeSceneModel.Fetch.ViewModel)
+    func showTodos(_ viewModel: HomeSceneModel.FetchAll.ViewModel)
 }
 
 protocol HomeSceneViewControllerOutput: AnyObject {
@@ -92,11 +93,9 @@ final class HomeSceneViewController: UIViewController {
         )
     }
     
-    private func makeSnapshot(with viewModel: HomeSceneModel.Fetch.ViewModel) {
-        let todo = viewModel.todo
-        
+    private func makeSnapshot(with todos: [Todo]) {
         var snapshot = dataSource.snapshot()
-        snapshot.appendItems([todo])
+        snapshot.appendItems(todos)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
@@ -114,10 +113,18 @@ extension HomeSceneViewController: UITableViewDelegate {
 
 /// Implement the requirement of protocol
 extension HomeSceneViewController: HomeSceneViewControllerInput {
-    func showTodo(_ todo: HomeSceneModel.Fetch.ViewModel) {
+    func showTodo(_ viewModel: HomeSceneModel.Fetch.ViewModel) {
         Task {
             await MainActor.run { [weak self] in
-                self?.makeSnapshot(with: todo)
+                self?.makeSnapshot(with: [viewModel.todo])
+            }
+        }
+    }
+    
+    func showTodos(_ viewModel: HomeSceneModel.FetchAll.ViewModel) {
+        Task {
+            await MainActor.run { [weak self] in
+                self?.makeSnapshot(with: viewModel.todos)
             }
         }
     }
