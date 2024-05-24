@@ -37,6 +37,7 @@
 		83A81ED22C004A7B00B1E028 /* SwiftDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED12C004A7B00B1E028 /* SwiftDataContainer.swift */; };
 		83A81ED42C004A9700B1E028 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED32C004A9700B1E028 /* Container.swift */; };
 		83A81ED62C004C3800B1E028 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED52C004C3800B1E028 /* TodoService.swift */; };
+		83A81ED92C00582100B1E028 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED82C00582100B1E028 /* Alertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		83A81ED12C004A7B00B1E028 /* SwiftDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataContainer.swift; sourceTree = "<group>"; };
 		83A81ED32C004A9700B1E028 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		83A81ED52C004C3800B1E028 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
+		83A81ED82C00582100B1E028 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		83A81E962C00131700B1E028 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				83A81ED72C00581700B1E028 /* Utils */,
 				83A81EBE2C002E8B00B1E028 /* AddTodoScene */,
 				83A81EA32C00134400B1E028 /* HomeScene */,
 			);
@@ -252,6 +255,14 @@
 				83A81ED32C004A9700B1E028 /* Container.swift */,
 			);
 			path = Container;
+			sourceTree = "<group>";
+		};
+		83A81ED72C00581700B1E028 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				83A81ED82C00582100B1E028 /* Alertable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +420,7 @@
 				83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */,
 				83A81ECE2C00424B00B1E028 /* TodoNotification.swift in Sources */,
 				83A81EAF2C00135400B1E028 /* HomeSceneConfigurator.swift in Sources */,
+				83A81ED92C00582100B1E028 /* Alertable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
