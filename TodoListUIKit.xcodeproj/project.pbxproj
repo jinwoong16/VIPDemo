@@ -34,6 +34,9 @@
 		83A81ECA2C002E9D00B1E028 /* AddTodoSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */; };
 		83A81ECC2C00326300B1E028 /* AddTodoSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */; };
 		83A81ECE2C00424B00B1E028 /* TodoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ECD2C00424B00B1E028 /* TodoNotification.swift */; };
+		83A81ED22C004A7B00B1E028 /* SwiftDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED12C004A7B00B1E028 /* SwiftDataContainer.swift */; };
+		83A81ED42C004A9700B1E028 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED32C004A9700B1E028 /* Container.swift */; };
+		83A81ED62C004C3800B1E028 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED52C004C3800B1E028 /* TodoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneConfigurator.swift; sourceTree = "<group>"; };
 		83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneModel.swift; sourceTree = "<group>"; };
 		83A81ECD2C00424B00B1E028 /* TodoNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNotification.swift; sourceTree = "<group>"; };
+		83A81ED12C004A7B00B1E028 /* SwiftDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataContainer.swift; sourceTree = "<group>"; };
+		83A81ED32C004A9700B1E028 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		83A81ED52C004C3800B1E028 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 		83A81E652C00122800B1E028 /* TodoListUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				83A81ECF2C004A6500B1E028 /* Service */,
 				83A81EB62C0020A100B1E028 /* Model */,
 				83A81EB12C00150D00B1E028 /* Factories */,
 				83A81E962C00131700B1E028 /* Scenes */,
@@ -227,6 +234,24 @@
 				83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */,
 			);
 			path = AddTodoScene;
+			sourceTree = "<group>";
+		};
+		83A81ECF2C004A6500B1E028 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				83A81ED02C004A7100B1E028 /* Container */,
+				83A81ED52C004C3800B1E028 /* TodoService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		83A81ED02C004A7100B1E028 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				83A81ED12C004A7B00B1E028 /* SwiftDataContainer.swift */,
+				83A81ED32C004A9700B1E028 /* Container.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,8 +388,10 @@
 				83A81ECC2C00326300B1E028 /* AddTodoSceneModel.swift in Sources */,
 				83A81EBB2C0020FD00B1E028 /* HomeSceneModel.swift in Sources */,
 				83A81E6B2C00122800B1E028 /* ViewController.swift in Sources */,
+				83A81ED62C004C3800B1E028 /* TodoService.swift in Sources */,
 				83A81EC52C002E9D00B1E028 /* AddTodoScenePresenter.swift in Sources */,
 				83A81EC62C002E9D00B1E028 /* AddTodoSceneWorker.swift in Sources */,
+				83A81ED22C004A7B00B1E028 /* SwiftDataContainer.swift in Sources */,
 				83A81EC72C002E9D00B1E028 /* AddTodoSceneRouter.swift in Sources */,
 				83A81EC82C002E9D00B1E028 /* AddTodoSceneViewController.swift in Sources */,
 				83A81EC92C002E9D00B1E028 /* AddTodoSceneInteractor.swift in Sources */,
@@ -378,6 +405,7 @@
 				83A81EB82C0020B100B1E028 /* Todo.swift in Sources */,
 				83A81EAC2C00135400B1E028 /* HomeSceneRouter.swift in Sources */,
 				83A81EAD2C00135400B1E028 /* HomeSceneViewController.swift in Sources */,
+				83A81ED42C004A9700B1E028 /* Container.swift in Sources */,
 				83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */,
 				83A81ECE2C00424B00B1E028 /* TodoNotification.swift in Sources */,
 				83A81EAF2C00135400B1E028 /* HomeSceneConfigurator.swift in Sources */,
