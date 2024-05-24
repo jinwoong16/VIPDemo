@@ -11,4 +11,5 @@ protocol Container<Element> {
     associatedtype Element
     func readAll() async throws -> [Element]
     func write(with element: Element) async throws
+    func delete(data: Element) async
 }
