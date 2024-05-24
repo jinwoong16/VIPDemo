@@ -19,5 +19,7 @@ final class HomeScenePresenter {
 }
 
 extension HomeScenePresenter: HomeScenePresenterInput {
-
+    func present(with response: HomeSceneModel.Fetch.Response) {
+        viewController?.showTodo(.init(todo: response.todo))
+    }
 }
