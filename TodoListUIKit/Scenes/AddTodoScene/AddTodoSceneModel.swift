@@ -13,10 +13,21 @@ enum AddTodoSceneModel {
             let body: String
         }
         struct Response {
-            
+            let reason: RejectReason
         }
         struct ViewModel {
+            let alertMessage: String
+        }
+        
+        enum RejectReason {
+            case emptyBody
             
+            var description: String {
+                switch self {
+                    case .emptyBody:
+                        return "Empty body is now allowed."
+                }
+            }
         }
     }
 }
