@@ -8,11 +8,11 @@
 import UIKit
 
 protocol HomeSceneViewControllerInput: AnyObject {
-
+    func showTodo(_ todo: HomeSceneModel.Fetch.ViewModel)
 }
 
 protocol HomeSceneViewControllerOutput: AnyObject {
-
+    func tapAddTodoButton()
 }
 
 final class HomeSceneViewController: UIViewController {
@@ -29,7 +29,8 @@ final class HomeSceneViewController: UIViewController {
             ) as? TodoTableCell else {
                 return UITableViewCell()
             }
-            cell.setup()
+            cell.setup(with: itemIdentifier)
+            cell.selectionStyle = .none
             
             return cell
         }
@@ -45,6 +46,7 @@ final class HomeSceneViewController: UIViewController {
         
         configureUI()
         configureTableView()
+        configureNavigationItems()
     }
 
     // MARK: - Configure Components
@@ -68,19 +70,47 @@ final class HomeSceneViewController: UIViewController {
     private func configureTableView() {
         tableView.register(TodoTableCell.self, forCellReuseIdentifier: TodoTableCell.reuseableIdentifier)
         tableView.dataSource = dataSource
+        tableView.delegate = self
         
         var snapshot = NSDiffableDataSourceSnapshot<Int, Todo>()
         snapshot.appendSections([0])
-//        snapshot.appendItems([Todo(completed: false, description: "1"), Todo(completed: false, description: "1")])
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-    private func makeSnapshot() {
+    private func configureNavigationItems() {
+        navigationItem.title = "TodoList"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            systemItem: .add,
+            primaryAction: UIAction { [weak self] _ in
+                self?.interactor?.tapAddTodoButton()
+            }
+        )
+    }
+    
+    private func makeSnapshot(with viewModel: HomeSceneModel.Fetch.ViewModel) {
+        let todo = viewModel.todo
         
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems([todo])
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+extension HomeSceneViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var snapshot = dataSource.snapshot()
+        let selectedTodo = snapshot.itemIdentifiers[indexPath.row]
+        selectedTodo.completed.toggle()
+        snapshot.reconfigureItems([selectedTodo])
+        
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 
 /// Implement the requirement of protocol
 extension HomeSceneViewController: HomeSceneViewControllerInput {
-
+    func showTodo(_ todo: HomeSceneModel.Fetch.ViewModel) {
+        makeSnapshot(with: todo)
+    }
 }
