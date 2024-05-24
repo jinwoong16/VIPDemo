@@ -11,6 +11,7 @@ import Combine
 protocol HomeSceneWorkerLogic {
     func fetch() async -> [Todo]
     func receiveEvent() -> AnyPublisher<Todo, Never>
+    func delete(data: Todo) async
 }
 
 final class HomeSceneWorker: HomeSceneWorkerLogic {
@@ -29,5 +30,9 @@ final class HomeSceneWorker: HomeSceneWorkerLogic {
             .publisher(for: TodoNotification.todoDidAppend.notification)
             .compactMap { $0.object as? Todo }
             .eraseToAnyPublisher()
+    }
+    
+    func delete(data: Todo) async {
+        await service.delete(data: data)
     }
 }

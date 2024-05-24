@@ -31,4 +31,20 @@ enum HomeSceneModel {
             let todos: [Todo]
         }
     }
+    
+    enum Delete {
+        struct Request {
+            let data: Todo
+        }
+        struct Response {
+            let result: Bool
+        }
+        struct ViewModel {
+            let result: Result
+        }
+        enum Result {
+            case success
+            case failure
+        }
+    }
 }

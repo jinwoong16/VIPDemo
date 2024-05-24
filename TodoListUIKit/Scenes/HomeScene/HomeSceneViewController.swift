@@ -10,11 +10,13 @@ import UIKit
 protocol HomeSceneViewControllerInput: AnyObject {
     func showTodo(_ viewModel: HomeSceneModel.Fetch.ViewModel)
     func showTodos(_ viewModel: HomeSceneModel.FetchAll.ViewModel)
+    func showAlert(_ viewModel: HomeSceneModel.Delete.ViewModel)
 }
 
 protocol HomeSceneViewControllerOutput: AnyObject {
     func tapAddTodoButton()
     func viewDidLoad()
+    func tapDeleteButton(request: HomeSceneModel.Delete.Request)
 }
 
 final class HomeSceneViewController: UIViewController {
@@ -23,19 +25,8 @@ final class HomeSceneViewController: UIViewController {
         return UITableView()
     }()
     
-    private lazy var dataSource: UITableViewDiffableDataSource<Int, Todo> = {
-        return UITableViewDiffableDataSource<Int, Todo>(tableView: tableView) { tableView, indexPath, itemIdentifier in
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TodoTableCell.reuseableIdentifier,
-                for: indexPath
-            ) as? TodoTableCell else {
-                return UITableViewCell()
-            }
-            cell.setup(with: itemIdentifier)
-            cell.selectionStyle = .none
-            
-            return cell
-        }
+    private lazy var dataSource: TodoDataSource = {
+        return TodoDataSource(tableView: tableView)
     }()
 
     // MARK: - Dependencies
@@ -109,6 +100,27 @@ extension HomeSceneViewController: UITableViewDelegate {
         
         dataSource.apply(snapshot, animatingDifferences: false)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(
+            style: .destructive,
+            title: "delete"
+        ) { [weak self] action, view, success in
+            guard let self else { return }
+            
+            var snapshot = self.dataSource.snapshot()
+            
+            let item = snapshot.itemIdentifiers[indexPath.row]
+            snapshot.deleteItems([item])
+            
+            self.dataSource.apply(snapshot)
+            self.interactor?.tapDeleteButton(request: .init(data: item))
+        }
+        
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
 
 /// Implement the requirement of protocol
@@ -128,4 +140,19 @@ extension HomeSceneViewController: HomeSceneViewControllerInput {
             }
         }
     }
+    
+    func showAlert(_ viewModel: HomeSceneModel.Delete.ViewModel) {
+        Task {
+            await MainActor.run { [weak self] in
+                switch viewModel.result {
+                    case .success:
+                        self?.showAlert(title: "Success", message: "Successfully delete the todo")
+                    case .failure:
+                        self?.showAlert(title: "Failed", message: "Sorry, it could not make it")
+                }
+            }
+        }
+    }
 }
+
+extension HomeSceneViewController: Alertable {}

@@ -26,4 +26,12 @@ extension HomeScenePresenter: HomeScenePresenterInput {
     func present(with response: HomeSceneModel.FetchAll.Response) {
         viewController?.showTodos(.init(todos: response.todos))
     }
+    
+    func present(with response: HomeSceneModel.Delete.Response) {
+        if response.result {
+            viewController?.showAlert(.init(result: .success))
+        } else {
+            viewController?.showAlert(.init(result: .failure))
+        }
+    }
 }

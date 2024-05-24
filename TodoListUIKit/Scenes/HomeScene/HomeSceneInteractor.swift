@@ -13,6 +13,7 @@ typealias HomeSceneInteractorInput = HomeSceneViewControllerOutput
 protocol HomeSceneInteractorOutput: AnyObject {
     func present(with response: HomeSceneModel.Fetch.Response)
     func present(with response: HomeSceneModel.FetchAll.Response)
+    func present(with response: HomeSceneModel.Delete.Response)
 }
 
 final class HomeSceneInteractor {
@@ -52,6 +53,13 @@ extension HomeSceneInteractor: HomeSceneInteractorInput {
         Task { [weak self] in
             let todos = await self?.worker.fetch()
             self?.presenter.present(with: .init(todos: todos ?? []))
+        }
+    }
+    
+    func tapDeleteButton(request: HomeSceneModel.Delete.Request) {
+        Task { [weak self] in
+            await self?.worker.delete(data: request.data)
+            self?.presenter.present(with: .init(result: true))
         }
     }
 }
