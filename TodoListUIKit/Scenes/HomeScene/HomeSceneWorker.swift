@@ -9,15 +9,19 @@ import Foundation
 import Combine
 
 protocol HomeSceneWorkerLogic {
-    func fetch() async
+    func fetch() async -> [Todo]
     func receiveEvent() -> AnyPublisher<Todo, Never>
 }
 
 final class HomeSceneWorker: HomeSceneWorkerLogic {
-//    private let databaseService ...
+    private let service: TodoService
     
-    func fetch() async {
-        // fetch from db
+    init(service: TodoService) {
+        self.service = service
+    }
+    
+    func fetch() async -> [Todo] {
+        await service.readAll()
     }
     
     func receiveEvent() -> AnyPublisher<Todo, Never> {
