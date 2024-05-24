@@ -31,4 +31,8 @@ final class TodoService {
             debugPrint(#function, "error: \(error.localizedDescription)")
         }
     }
+    
+    func delete(data: Todo) async {
+        await container.delete(data: data)
+    }
 }
