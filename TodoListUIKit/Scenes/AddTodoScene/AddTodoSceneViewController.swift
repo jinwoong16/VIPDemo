@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddTodoSceneViewControllerInput: AnyObject {
     func dismiss()
+    func showAlert(with message: String)
 }
 
 protocol AddTodoSceneViewControllerOutput: AnyObject {
@@ -83,4 +84,10 @@ extension AddTodoSceneViewController: AddTodoSceneViewControllerInput {
             }
         }
     }
+    
+    func showAlert(with message: String) {
+        showAlert(title: "Warning", message: message)
+    }
 }
+
+extension AddTodoSceneViewController: Alertable {}
