@@ -19,4 +19,16 @@ enum HomeSceneModel {
             let todo: Todo
         }
     }
+    
+    enum FetchAll {
+        struct Request {
+            
+        }
+        struct Response {
+            let todos: [Todo]
+        }
+        struct ViewModel {
+            let todos: [Todo]
+        }
+    }
 }
