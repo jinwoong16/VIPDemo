@@ -8,18 +8,18 @@
 import Foundation
 
 protocol HomeSceneConfigurator {
-    // func configure(_ viewController: HomeSceneViewController) -> HomeSceneViewController
+     func configure(_ viewController: HomeSceneViewController) -> HomeSceneViewController
 }
 
 final class DefaultHomeSceneConfigurator: HomeSceneConfigurator {
-    // func configure(_ viewController: HomeSceneViewController) -> HomeSceneViewController {
-    //     let worker = HomeSceneWorker()
-    //     let presenter = HomeScenePresenter(viewController: viewController)
-    //     let interactor = HomeSceneInteractor(presenter: presenter, worker: worker)
+     func configure(_ viewController: HomeSceneViewController) -> HomeSceneViewController {
+         let worker = HomeSceneWorker()
+         let presenter = HomeScenePresenter(viewController: viewController)
+         let interactor = HomeSceneInteractor(presenter: presenter, worker: worker)
 
-    //     viewController.interactor = interactor
-    //     viewController.router = HomeSceneRouter()
+         viewController.interactor = interactor
+         viewController.router = DefaultHomeSceneRouter()
 
-    //     return viewController
-    // }
+         return viewController
+     }
 }

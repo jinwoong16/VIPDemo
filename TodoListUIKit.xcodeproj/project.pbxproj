@@ -22,6 +22,7 @@
 		83A81EAD2C00135400B1E028 /* HomeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA72C00135400B1E028 /* HomeSceneViewController.swift */; };
 		83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */; };
 		83A81EAF2C00135400B1E028 /* HomeSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */; };
+		83A81EB32C00153A00B1E028 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EB22C00153A00B1E028 /* SceneFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		83A81EA72C00135400B1E028 /* HomeSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneViewController.swift; sourceTree = "<group>"; };
 		83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneInteractor.swift; sourceTree = "<group>"; };
 		83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneConfigurator.swift; sourceTree = "<group>"; };
+		83A81EB22C00153A00B1E028 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		83A81E652C00122800B1E028 /* TodoListUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				83A81EB12C00150D00B1E028 /* Factories */,
 				83A81E962C00131700B1E028 /* Scenes */,
 				83A81E662C00122800B1E028 /* AppDelegate.swift */,
 				83A81E682C00122800B1E028 /* SceneDelegate.swift */,
@@ -151,6 +154,7 @@
 		83A81EA32C00134400B1E028 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				83A81EB02C0014DB00B1E028 /* View */,
 				83A81EA72C00135400B1E028 /* HomeSceneViewController.swift */,
 				83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */,
 				83A81EA52C00135400B1E028 /* HomeSceneWorker.swift */,
@@ -159,6 +163,21 @@
 				83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */,
 			);
 			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		83A81EB02C0014DB00B1E028 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83A81EB12C00150D00B1E028 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				83A81EB22C00153A00B1E028 /* SceneFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A81E6B2C00122800B1E028 /* ViewController.swift in Sources */,
+				83A81EB32C00153A00B1E028 /* SceneFactory.swift in Sources */,
 				83A81E672C00122800B1E028 /* AppDelegate.swift in Sources */,
 				83A81E692C00122800B1E028 /* SceneDelegate.swift in Sources */,
 				83A81EAA2C00135400B1E028 /* HomeScenePresenter.swift in Sources */,
