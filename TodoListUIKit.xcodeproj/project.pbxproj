@@ -16,6 +16,12 @@
 		83A81E7E2C00122900B1E028 /* TodoListUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81E7D2C00122900B1E028 /* TodoListUIKitTests.swift */; };
 		83A81E882C00122A00B1E028 /* TodoListUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81E872C00122A00B1E028 /* TodoListUIKitUITests.swift */; };
 		83A81E8A2C00122A00B1E028 /* TodoListUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81E892C00122A00B1E028 /* TodoListUIKitUITestsLaunchTests.swift */; };
+		83A81EAA2C00135400B1E028 /* HomeScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA42C00135400B1E028 /* HomeScenePresenter.swift */; };
+		83A81EAB2C00135400B1E028 /* HomeSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA52C00135400B1E028 /* HomeSceneWorker.swift */; };
+		83A81EAC2C00135400B1E028 /* HomeSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA62C00135400B1E028 /* HomeSceneRouter.swift */; };
+		83A81EAD2C00135400B1E028 /* HomeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA72C00135400B1E028 /* HomeSceneViewController.swift */; };
+		83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */; };
+		83A81EAF2C00135400B1E028 /* HomeSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		83A81E832C00122900B1E028 /* TodoListUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A81E872C00122A00B1E028 /* TodoListUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListUIKitUITests.swift; sourceTree = "<group>"; };
 		83A81E892C00122A00B1E028 /* TodoListUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83A81EA42C00135400B1E028 /* HomeScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScenePresenter.swift; sourceTree = "<group>"; };
+		83A81EA52C00135400B1E028 /* HomeSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneWorker.swift; sourceTree = "<group>"; };
+		83A81EA62C00135400B1E028 /* HomeSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneRouter.swift; sourceTree = "<group>"; };
+		83A81EA72C00135400B1E028 /* HomeSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneViewController.swift; sourceTree = "<group>"; };
+		83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneInteractor.swift; sourceTree = "<group>"; };
+		83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		83A81E652C00122800B1E028 /* TodoListUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				83A81E962C00131700B1E028 /* Scenes */,
 				83A81E662C00122800B1E028 /* AppDelegate.swift */,
 				83A81E682C00122800B1E028 /* SceneDelegate.swift */,
 				83A81E6A2C00122800B1E028 /* ViewController.swift */,
@@ -125,6 +138,27 @@
 				83A81E892C00122A00B1E028 /* TodoListUIKitUITestsLaunchTests.swift */,
 			);
 			path = TodoListUIKitUITests;
+			sourceTree = "<group>";
+		};
+		83A81E962C00131700B1E028 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				83A81EA32C00134400B1E028 /* HomeScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		83A81EA32C00134400B1E028 /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				83A81EA72C00135400B1E028 /* HomeSceneViewController.swift */,
+				83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */,
+				83A81EA52C00135400B1E028 /* HomeSceneWorker.swift */,
+				83A81EA42C00135400B1E028 /* HomeScenePresenter.swift */,
+				83A81EA62C00135400B1E028 /* HomeSceneRouter.swift */,
+				83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */,
+			);
+			path = HomeScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +295,12 @@
 				83A81E6B2C00122800B1E028 /* ViewController.swift in Sources */,
 				83A81E672C00122800B1E028 /* AppDelegate.swift in Sources */,
 				83A81E692C00122800B1E028 /* SceneDelegate.swift in Sources */,
+				83A81EAA2C00135400B1E028 /* HomeScenePresenter.swift in Sources */,
+				83A81EAB2C00135400B1E028 /* HomeSceneWorker.swift in Sources */,
+				83A81EAC2C00135400B1E028 /* HomeSceneRouter.swift in Sources */,
+				83A81EAD2C00135400B1E028 /* HomeSceneViewController.swift in Sources */,
+				83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */,
+				83A81EAF2C00135400B1E028 /* HomeSceneConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
