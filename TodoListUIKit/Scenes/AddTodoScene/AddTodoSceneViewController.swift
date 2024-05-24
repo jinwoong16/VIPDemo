@@ -65,8 +65,10 @@ final class AddTodoSceneViewController: UIViewController {
         )
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             systemItem: .done,
-            primaryAction: UIAction { _ in
-                // done logic goes here
+            primaryAction: UIAction { [weak self] _ in
+                guard let self else { return }
+                guard let body = self.textField.text else { return }
+                self.interactor?.tapAddButton(.init(body: body))
             }
         )
     }
@@ -75,6 +77,10 @@ final class AddTodoSceneViewController: UIViewController {
 /// Implement the requirement of protocol
 extension AddTodoSceneViewController: AddTodoSceneViewControllerInput {
     func dismiss() {
-        dismiss(animated: true)
+        Task {
+            await MainActor.run { [weak self] in
+                self?.dismiss(animated: true)
+            }
+        }
     }
 }
