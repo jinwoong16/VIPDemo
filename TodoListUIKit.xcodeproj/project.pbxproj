@@ -39,6 +39,7 @@
 		83A81ED62C004C3800B1E028 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED52C004C3800B1E028 /* TodoService.swift */; };
 		83A81ED92C00582100B1E028 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED82C00582100B1E028 /* Alertable.swift */; };
 		83A81EDD2C00974700B1E028 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EDC2C00974700B1E028 /* String+.swift */; };
+		83A81EDF2C00A8CD00B1E028 /* TodoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EDE2C00A8CD00B1E028 /* TodoDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		83A81ED52C004C3800B1E028 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		83A81ED82C00582100B1E028 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		83A81EDC2C00974700B1E028 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		83A81EDE2C00A8CD00B1E028 /* TodoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				83A81EB42C00173800B1E028 /* TodoTableCell.swift */,
+				83A81EDE2C00A8CD00B1E028 /* TodoDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				83A81EC62C002E9D00B1E028 /* AddTodoSceneWorker.swift in Sources */,
 				83A81ED22C004A7B00B1E028 /* SwiftDataContainer.swift in Sources */,
 				83A81EC72C002E9D00B1E028 /* AddTodoSceneRouter.swift in Sources */,
+				83A81EDF2C00A8CD00B1E028 /* TodoDataSource.swift in Sources */,
 				83A81EC82C002E9D00B1E028 /* AddTodoSceneViewController.swift in Sources */,
 				83A81EC92C002E9D00B1E028 /* AddTodoSceneInteractor.swift in Sources */,
 				83A81EDD2C00974700B1E028 /* String+.swift in Sources */,
