@@ -23,6 +23,9 @@
 		83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */; };
 		83A81EAF2C00135400B1E028 /* HomeSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */; };
 		83A81EB32C00153A00B1E028 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EB22C00153A00B1E028 /* SceneFactory.swift */; };
+		83A81EB52C00173800B1E028 /* TodoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EB42C00173800B1E028 /* TodoTableCell.swift */; };
+		83A81EB82C0020B100B1E028 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EB72C0020B100B1E028 /* Todo.swift */; };
+		83A81EBB2C0020FD00B1E028 /* HomeSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EBA2C0020FD00B1E028 /* HomeSceneModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		83A81EA82C00135400B1E028 /* HomeSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneInteractor.swift; sourceTree = "<group>"; };
 		83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneConfigurator.swift; sourceTree = "<group>"; };
 		83A81EB22C00153A00B1E028 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
+		83A81EB42C00173800B1E028 /* TodoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableCell.swift; sourceTree = "<group>"; };
+		83A81EB72C0020B100B1E028 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		83A81EBA2C0020FD00B1E028 /* HomeSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		83A81E652C00122800B1E028 /* TodoListUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				83A81EB62C0020A100B1E028 /* Model */,
 				83A81EB12C00150D00B1E028 /* Factories */,
 				83A81E962C00131700B1E028 /* Scenes */,
 				83A81E662C00122800B1E028 /* AppDelegate.swift */,
@@ -161,6 +168,7 @@
 				83A81EA42C00135400B1E028 /* HomeScenePresenter.swift */,
 				83A81EA62C00135400B1E028 /* HomeSceneRouter.swift */,
 				83A81EA92C00135400B1E028 /* HomeSceneConfigurator.swift */,
+				83A81EBA2C0020FD00B1E028 /* HomeSceneModel.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 		83A81EB02C0014DB00B1E028 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83A81EB42C00173800B1E028 /* TodoTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +187,14 @@
 				83A81EB22C00153A00B1E028 /* SceneFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		83A81EB62C0020A100B1E028 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83A81EB72C0020B100B1E028 /* Todo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,12 +328,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A81EBB2C0020FD00B1E028 /* HomeSceneModel.swift in Sources */,
 				83A81E6B2C00122800B1E028 /* ViewController.swift in Sources */,
 				83A81EB32C00153A00B1E028 /* SceneFactory.swift in Sources */,
+				83A81EB52C00173800B1E028 /* TodoTableCell.swift in Sources */,
 				83A81E672C00122800B1E028 /* AppDelegate.swift in Sources */,
 				83A81E692C00122800B1E028 /* SceneDelegate.swift in Sources */,
 				83A81EAA2C00135400B1E028 /* HomeScenePresenter.swift in Sources */,
 				83A81EAB2C00135400B1E028 /* HomeSceneWorker.swift in Sources */,
+				83A81EB82C0020B100B1E028 /* Todo.swift in Sources */,
 				83A81EAC2C00135400B1E028 /* HomeSceneRouter.swift in Sources */,
 				83A81EAD2C00135400B1E028 /* HomeSceneViewController.swift in Sources */,
 				83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */,
