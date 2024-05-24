@@ -22,4 +22,11 @@ extension AddTodoScenePresenter: AddTodoScenePresenterInput {
     func dismiss() {
         viewController?.dismiss()
     }
+    
+    func rejectRequest(_ response: AddTodoSceneModel.AddTodo.Response) {
+        switch response.reason {
+            case .emptyBody:
+                viewController?.showAlert(with: response.reason.description)
+        }
+    }
 }
