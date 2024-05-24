@@ -83,7 +83,9 @@ final class HomeSceneViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             systemItem: .add,
             primaryAction: UIAction { [weak self] _ in
-                self?.interactor?.tapAddTodoButton()
+//                self?.interactor?.tapAddTodoButton()
+                guard let self else { return }
+                self.router?.showAddTodoScene(from: self)
             }
         )
     }
