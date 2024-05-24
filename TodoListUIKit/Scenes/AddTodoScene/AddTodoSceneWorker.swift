@@ -6,11 +6,30 @@
 //
 
 import Foundation
+import Combine
 
 protocol AddTodoSceneWorkerLogic {
-
+    func createTodo(with body: String) async
 }
 
 final class AddTodoSceneWorker: AddTodoSceneWorkerLogic {
+//    private let databaseService ...
     
+    func createTodo(with body: String) async {
+        let todo = Todo(completed: false, description: body)
+        
+        /// Create todo in db using SwiftData
+        /// This work is asynchronous
+        /// WORK ....
+        ///
+        
+        post(TodoNotification.todoDidAppend.notification, object: todo)
+    }
+    
+    private func post<T>(_ event: Notification.Name, object: T) {
+        NotificationCenter.default.post(
+            name: event,
+            object: object
+        )
+    }
 }
