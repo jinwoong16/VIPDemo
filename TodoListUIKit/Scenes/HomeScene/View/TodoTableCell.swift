@@ -19,7 +19,7 @@ final class TodoTableCell: UITableViewCell {
     
     private lazy var todoDescription: UILabel = {
         let todoDescription = UILabel()
-        todoDescription.text = "empty"
+        todoDescription.text = ""
         
         return todoDescription
     }()
@@ -57,9 +57,11 @@ final class TodoTableCell: UITableViewCell {
     func setup(with todo: Todo) {
         if todo.completed {
             completeButton.setImage(UIImage(systemName: "circle.inset.filled"), for: .normal)
+            todoDescription.attributedText = todo.body.toggleStrikeThrough(with: .complete)
         } else {
             completeButton.setImage(UIImage(systemName: "circle"), for: .normal)
+            todoDescription.attributedText = todo.body.toggleStrikeThrough(with: .incomplete)
         }
-        todoDescription.text = todo.body
+        
     }
 }
