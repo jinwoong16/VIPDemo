@@ -18,14 +18,14 @@ protocol AddTodoSceneViewControllerOutput: AnyObject {
 final class AddTodoSceneViewController: UIViewController {
     // MARK: - Components
     /// Create components which this view controller will manage
-    /*
-    private lazy var textLabel: UILabel = {
-        let textLabel = UILabel()
-
-        return textLabel
+    private lazy var textField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "add todo"
+        
+        return textField
     }()
-    */
-
+    
     // MARK: - Dependencies
     var interactor: AddTodoSceneInteractorInput?
     var router: AddTodoSceneRouterLogic?
@@ -33,11 +33,25 @@ final class AddTodoSceneViewController: UIViewController {
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureUI()
     }
 
     // MARK: - Configure Components
     private func configureUI() {
-
+        view.backgroundColor = .white
+        
+        view.addSubview(textField)
+        
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        let global = view.safeAreaLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            textField.centerXAnchor.constraint(equalTo: global.centerXAnchor),
+            textField.centerYAnchor.constraint(equalTo: global.centerYAnchor),
+            textField.widthAnchor.constraint(equalTo: global.widthAnchor, multiplier: 0.75),
+        ])
     }
 }
 
