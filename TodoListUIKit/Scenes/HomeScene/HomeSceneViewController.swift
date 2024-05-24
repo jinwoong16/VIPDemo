@@ -113,6 +113,10 @@ extension HomeSceneViewController: UITableViewDelegate {
 /// Implement the requirement of protocol
 extension HomeSceneViewController: HomeSceneViewControllerInput {
     func showTodo(_ todo: HomeSceneModel.Fetch.ViewModel) {
-        makeSnapshot(with: todo)
+        Task {
+            await MainActor.run { [weak self] in
+                self?.makeSnapshot(with: todo)
+            }
+        }
     }
 }
