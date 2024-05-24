@@ -22,4 +22,8 @@ extension HomeScenePresenter: HomeScenePresenterInput {
     func present(with response: HomeSceneModel.Fetch.Response) {
         viewController?.showTodo(.init(todo: response.todo))
     }
+    
+    func present(with response: HomeSceneModel.FetchAll.Response) {
+        viewController?.showTodos(.init(todos: response.todos))
+    }
 }
