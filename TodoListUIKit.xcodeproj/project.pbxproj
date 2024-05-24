@@ -26,6 +26,12 @@
 		83A81EB52C00173800B1E028 /* TodoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EB42C00173800B1E028 /* TodoTableCell.swift */; };
 		83A81EB82C0020B100B1E028 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EB72C0020B100B1E028 /* Todo.swift */; };
 		83A81EBB2C0020FD00B1E028 /* HomeSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EBA2C0020FD00B1E028 /* HomeSceneModel.swift */; };
+		83A81EC52C002E9D00B1E028 /* AddTodoScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EBF2C002E9D00B1E028 /* AddTodoScenePresenter.swift */; };
+		83A81EC62C002E9D00B1E028 /* AddTodoSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC02C002E9D00B1E028 /* AddTodoSceneWorker.swift */; };
+		83A81EC72C002E9D00B1E028 /* AddTodoSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC12C002E9D00B1E028 /* AddTodoSceneRouter.swift */; };
+		83A81EC82C002E9D00B1E028 /* AddTodoSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC22C002E9D00B1E028 /* AddTodoSceneViewController.swift */; };
+		83A81EC92C002E9D00B1E028 /* AddTodoSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC32C002E9D00B1E028 /* AddTodoSceneInteractor.swift */; };
+		83A81ECA2C002E9D00B1E028 /* AddTodoSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,12 @@
 		83A81EB42C00173800B1E028 /* TodoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableCell.swift; sourceTree = "<group>"; };
 		83A81EB72C0020B100B1E028 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		83A81EBA2C0020FD00B1E028 /* HomeSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneModel.swift; sourceTree = "<group>"; };
+		83A81EBF2C002E9D00B1E028 /* AddTodoScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoScenePresenter.swift; sourceTree = "<group>"; };
+		83A81EC02C002E9D00B1E028 /* AddTodoSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneWorker.swift; sourceTree = "<group>"; };
+		83A81EC12C002E9D00B1E028 /* AddTodoSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneRouter.swift; sourceTree = "<group>"; };
+		83A81EC22C002E9D00B1E028 /* AddTodoSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneViewController.swift; sourceTree = "<group>"; };
+		83A81EC32C002E9D00B1E028 /* AddTodoSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneInteractor.swift; sourceTree = "<group>"; };
+		83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +165,7 @@
 		83A81E962C00131700B1E028 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				83A81EBE2C002E8B00B1E028 /* AddTodoScene */,
 				83A81EA32C00134400B1E028 /* HomeScene */,
 			);
 			path = Scenes;
@@ -195,6 +208,19 @@
 				83A81EB72C0020B100B1E028 /* Todo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		83A81EBE2C002E8B00B1E028 /* AddTodoScene */ = {
+			isa = PBXGroup;
+			children = (
+				83A81EC22C002E9D00B1E028 /* AddTodoSceneViewController.swift */,
+				83A81EC32C002E9D00B1E028 /* AddTodoSceneInteractor.swift */,
+				83A81EC02C002E9D00B1E028 /* AddTodoSceneWorker.swift */,
+				83A81EBF2C002E9D00B1E028 /* AddTodoScenePresenter.swift */,
+				83A81EC12C002E9D00B1E028 /* AddTodoSceneRouter.swift */,
+				83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */,
+			);
+			path = AddTodoScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +356,12 @@
 			files = (
 				83A81EBB2C0020FD00B1E028 /* HomeSceneModel.swift in Sources */,
 				83A81E6B2C00122800B1E028 /* ViewController.swift in Sources */,
+				83A81EC52C002E9D00B1E028 /* AddTodoScenePresenter.swift in Sources */,
+				83A81EC62C002E9D00B1E028 /* AddTodoSceneWorker.swift in Sources */,
+				83A81EC72C002E9D00B1E028 /* AddTodoSceneRouter.swift in Sources */,
+				83A81EC82C002E9D00B1E028 /* AddTodoSceneViewController.swift in Sources */,
+				83A81EC92C002E9D00B1E028 /* AddTodoSceneInteractor.swift in Sources */,
+				83A81ECA2C002E9D00B1E028 /* AddTodoSceneConfigurator.swift in Sources */,
 				83A81EB32C00153A00B1E028 /* SceneFactory.swift in Sources */,
 				83A81EB52C00173800B1E028 /* TodoTableCell.swift in Sources */,
 				83A81E672C00122800B1E028 /* AppDelegate.swift in Sources */,
