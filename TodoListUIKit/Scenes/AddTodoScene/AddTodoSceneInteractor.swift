@@ -11,6 +11,7 @@ typealias AddTodoSceneInteractorInput = AddTodoSceneViewControllerOutput
 
 protocol AddTodoSceneInteractorOutput: AnyObject {
     func dismiss()
+    func rejectRequest(_ response: AddTodoSceneModel.AddTodo.Response)
 }
 
 final class AddTodoSceneInteractor {
@@ -28,6 +29,11 @@ final class AddTodoSceneInteractor {
 
 extension AddTodoSceneInteractor: AddTodoSceneInteractorInput {
     func tapAddButton(_ request: AddTodoSceneModel.AddTodo.Request) {
+        if request.body.isEmpty {
+            presenter.rejectRequest(.init(reason: .emptyBody))
+            return
+        }
+        
         Task { [weak self] in
             await self?.worker.createTodo(with: request.body)
             
