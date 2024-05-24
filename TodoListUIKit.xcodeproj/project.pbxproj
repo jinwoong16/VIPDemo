@@ -38,6 +38,7 @@
 		83A81ED42C004A9700B1E028 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED32C004A9700B1E028 /* Container.swift */; };
 		83A81ED62C004C3800B1E028 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED52C004C3800B1E028 /* TodoService.swift */; };
 		83A81ED92C00582100B1E028 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED82C00582100B1E028 /* Alertable.swift */; };
+		83A81EDD2C00974700B1E028 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EDC2C00974700B1E028 /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		83A81ED32C004A9700B1E028 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		83A81ED52C004C3800B1E028 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		83A81ED82C00582100B1E028 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		83A81EDC2C00974700B1E028 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,12 +145,12 @@
 		83A81E652C00122800B1E028 /* TodoListUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				83A81EDA2C00971F00B1E028 /* Application */,
 				83A81ECF2C004A6500B1E028 /* Service */,
 				83A81EB62C0020A100B1E028 /* Model */,
 				83A81EB12C00150D00B1E028 /* Factories */,
 				83A81E962C00131700B1E028 /* Scenes */,
-				83A81E662C00122800B1E028 /* AppDelegate.swift */,
-				83A81E682C00122800B1E028 /* SceneDelegate.swift */,
+				83A81EDB2C00973B00B1E028 /* Extensions */,
 				83A81E6A2C00122800B1E028 /* ViewController.swift */,
 				83A81E6C2C00122800B1E028 /* Main.storyboard */,
 				83A81E6F2C00122900B1E028 /* Assets.xcassets */,
@@ -263,6 +265,23 @@
 				83A81ED82C00582100B1E028 /* Alertable.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		83A81EDA2C00971F00B1E028 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				83A81E662C00122800B1E028 /* AppDelegate.swift */,
+				83A81E682C00122800B1E028 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		83A81EDB2C00973B00B1E028 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83A81EDC2C00974700B1E028 /* String+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +425,7 @@
 				83A81EC72C002E9D00B1E028 /* AddTodoSceneRouter.swift in Sources */,
 				83A81EC82C002E9D00B1E028 /* AddTodoSceneViewController.swift in Sources */,
 				83A81EC92C002E9D00B1E028 /* AddTodoSceneInteractor.swift in Sources */,
+				83A81EDD2C00974700B1E028 /* String+.swift in Sources */,
 				83A81ECA2C002E9D00B1E028 /* AddTodoSceneConfigurator.swift in Sources */,
 				83A81EB32C00153A00B1E028 /* SceneFactory.swift in Sources */,
 				83A81EB52C00173800B1E028 /* TodoTableCell.swift in Sources */,
