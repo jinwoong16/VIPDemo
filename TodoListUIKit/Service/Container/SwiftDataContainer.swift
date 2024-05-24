@@ -18,6 +18,10 @@ actor SwiftDataContainer {
         let context = data.modelContext ?? modelContext
         context.insert(data)
     }
+    
+    private func remove<T>(data: T) where T: PersistentModel {
+        self.modelContext.delete(data)
+    }
 }
 
 extension SwiftDataContainer: Container {
@@ -27,5 +31,9 @@ extension SwiftDataContainer: Container {
     
     func write(with element: Todo) async throws {
         insert(data: element)
+    }
+    
+    func delete(data: Todo) async {
+        remove(data: data)
     }
 }
