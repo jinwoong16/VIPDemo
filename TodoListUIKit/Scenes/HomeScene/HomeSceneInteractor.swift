@@ -10,7 +10,7 @@ import Foundation
 typealias HomeSceneInteractorInput = HomeSceneViewControllerOutput
 
 protocol HomeSceneInteractorOutput: AnyObject {
-
+    func present(with response: HomeSceneModel.Fetch.Response)
 }
 
 final class HomeSceneInteractor {
@@ -27,5 +27,10 @@ final class HomeSceneInteractor {
 }
 
 extension HomeSceneInteractor: HomeSceneInteractorInput {
-    
+    func tapAddTodoButton() {
+        let random = Int.random(in: 0..<10)
+        let todo = Todo(completed: false, description: "\(random)")
+        
+        presenter.present(with: .init(todo: todo))
+    }
 }
