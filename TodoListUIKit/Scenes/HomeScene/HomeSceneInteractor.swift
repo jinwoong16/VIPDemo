@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 typealias HomeSceneInteractorInput = HomeSceneViewControllerOutput
 
@@ -16,6 +17,7 @@ protocol HomeSceneInteractorOutput: AnyObject {
 final class HomeSceneInteractor {
     private let presenter: HomeScenePresenterInput
     private let worker: HomeSceneWorkerLogic
+    private var disposableBag = Set<AnyCancellable>()
 
     init(
         presenter: HomeScenePresenterInput, 
@@ -23,6 +25,17 @@ final class HomeSceneInteractor {
     ) {
         self.presenter = presenter
         self.worker = worker
+        
+        receiveEvent()
+    }
+    
+    func receiveEvent() {
+        worker
+            .receiveEvent()
+            .sink { [weak self] todo in
+                self?.presenter.present(with: .init(todo: todo))
+            }
+            .store(in: &disposableBag)
     }
 }
 
