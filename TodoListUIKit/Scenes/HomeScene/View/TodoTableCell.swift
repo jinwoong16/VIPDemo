@@ -54,5 +54,12 @@ final class TodoTableCell: UITableViewCell {
         ])
     }
     
-    func setup() {}
+    func setup(with todo: Todo) {
+        if todo.completed {
+            completeButton.setImage(UIImage(systemName: "circle.inset.filled"), for: .normal)
+        } else {
+            completeButton.setImage(UIImage(systemName: "circle"), for: .normal)
+        }
+        todoDescription.text = todo.body
+    }
 }
