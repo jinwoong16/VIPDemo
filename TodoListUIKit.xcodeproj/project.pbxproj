@@ -33,6 +33,7 @@
 		83A81EC92C002E9D00B1E028 /* AddTodoSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC32C002E9D00B1E028 /* AddTodoSceneInteractor.swift */; };
 		83A81ECA2C002E9D00B1E028 /* AddTodoSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */; };
 		83A81ECC2C00326300B1E028 /* AddTodoSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */; };
+		83A81ECE2C00424B00B1E028 /* TodoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ECD2C00424B00B1E028 /* TodoNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		83A81EC32C002E9D00B1E028 /* AddTodoSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneInteractor.swift; sourceTree = "<group>"; };
 		83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneConfigurator.swift; sourceTree = "<group>"; };
 		83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneModel.swift; sourceTree = "<group>"; };
+		83A81ECD2C00424B00B1E028 /* TodoNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				83A81EB72C0020B100B1E028 /* Todo.swift */,
+				83A81ECD2C00424B00B1E028 /* TodoNotification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				83A81EAC2C00135400B1E028 /* HomeSceneRouter.swift in Sources */,
 				83A81EAD2C00135400B1E028 /* HomeSceneViewController.swift in Sources */,
 				83A81EAE2C00135400B1E028 /* HomeSceneInteractor.swift in Sources */,
+				83A81ECE2C00424B00B1E028 /* TodoNotification.swift in Sources */,
 				83A81EAF2C00135400B1E028 /* HomeSceneConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
