@@ -32,6 +32,7 @@
 		83A81EC82C002E9D00B1E028 /* AddTodoSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC22C002E9D00B1E028 /* AddTodoSceneViewController.swift */; };
 		83A81EC92C002E9D00B1E028 /* AddTodoSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC32C002E9D00B1E028 /* AddTodoSceneInteractor.swift */; };
 		83A81ECA2C002E9D00B1E028 /* AddTodoSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */; };
+		83A81ECC2C00326300B1E028 /* AddTodoSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		83A81EC22C002E9D00B1E028 /* AddTodoSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneViewController.swift; sourceTree = "<group>"; };
 		83A81EC32C002E9D00B1E028 /* AddTodoSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneInteractor.swift; sourceTree = "<group>"; };
 		83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneConfigurator.swift; sourceTree = "<group>"; };
+		83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSceneModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				83A81EBF2C002E9D00B1E028 /* AddTodoScenePresenter.swift */,
 				83A81EC12C002E9D00B1E028 /* AddTodoSceneRouter.swift */,
 				83A81EC42C002E9D00B1E028 /* AddTodoSceneConfigurator.swift */,
+				83A81ECB2C00326300B1E028 /* AddTodoSceneModel.swift */,
 			);
 			path = AddTodoScene;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A81ECC2C00326300B1E028 /* AddTodoSceneModel.swift in Sources */,
 				83A81EBB2C0020FD00B1E028 /* HomeSceneModel.swift in Sources */,
 				83A81E6B2C00122800B1E028 /* ViewController.swift in Sources */,
 				83A81EC52C002E9D00B1E028 /* AddTodoScenePresenter.swift in Sources */,
