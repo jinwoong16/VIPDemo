@@ -96,7 +96,7 @@ final class HomeSceneViewController: UIViewController {
     private func makeSnapshot(with todos: [Todo]) {
         var snapshot = dataSource.snapshot()
         snapshot.appendItems(todos)
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 
