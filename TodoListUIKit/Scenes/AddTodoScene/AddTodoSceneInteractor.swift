@@ -28,6 +28,10 @@ final class AddTodoSceneInteractor {
 
 extension AddTodoSceneInteractor: AddTodoSceneInteractorInput {
     func tapAddButton(_ request: AddTodoSceneModel.AddTodo.Request) {
-        
+        Task { [weak self] in
+            await self?.worker.createTodo(with: request.body)
+            
+            self?.presenter.dismiss()
+        }
     }
 }
