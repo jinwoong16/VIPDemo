@@ -14,17 +14,20 @@ final class Todo: Hashable {
     var completed: Bool
     var body: String
     let created: Date
+    let dueDate: Date?
     
     init(
         id: UUID = UUID(),
         completed: Bool,
         description: String,
-        created: Date = Date()
+        created: Date = Date(),
+        dueDate: Date? = nil
     ) {
         self.id = id
         self.completed = completed
         self.body = description
         self.created = created
+        self.dueDate = dueDate
     }
     
     static func == (lhs: Todo, rhs: Todo) -> Bool {
