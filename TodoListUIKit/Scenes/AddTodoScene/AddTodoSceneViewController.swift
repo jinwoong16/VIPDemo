@@ -8,11 +8,11 @@
 import UIKit
 
 protocol AddTodoSceneViewControllerInput: AnyObject {
-
+    func dismiss()
 }
 
 protocol AddTodoSceneViewControllerOutput: AnyObject {
-
+    func tapAddButton(_ request: AddTodoSceneModel.AddTodo.Request)
 }
 
 final class AddTodoSceneViewController: UIViewController {
@@ -35,6 +35,7 @@ final class AddTodoSceneViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        configureNavigationItems()
     }
 
     // MARK: - Configure Components
@@ -53,9 +54,27 @@ final class AddTodoSceneViewController: UIViewController {
             textField.widthAnchor.constraint(equalTo: global.widthAnchor, multiplier: 0.75),
         ])
     }
+    
+    private func configureNavigationItems() {
+        navigationItem.title = "Add Todo"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            systemItem: .cancel,
+            primaryAction: UIAction { [weak self] _ in
+                self?.dismiss(animated: true)
+            }
+        )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            systemItem: .done,
+            primaryAction: UIAction { _ in
+                // done logic goes here
+            }
+        )
+    }
 }
 
 /// Implement the requirement of protocol
 extension AddTodoSceneViewController: AddTodoSceneViewControllerInput {
-
+    func dismiss() {
+        dismiss(animated: true)
+    }
 }

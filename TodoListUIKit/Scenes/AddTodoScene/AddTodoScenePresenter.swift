@@ -19,5 +19,7 @@ final class AddTodoScenePresenter {
 }
 
 extension AddTodoScenePresenter: AddTodoScenePresenterInput {
-
+    func dismiss() {
+        viewController?.dismiss()
+    }
 }

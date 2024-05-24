@@ -10,7 +10,7 @@ import Foundation
 typealias AddTodoSceneInteractorInput = AddTodoSceneViewControllerOutput
 
 protocol AddTodoSceneInteractorOutput: AnyObject {
-
+    func dismiss()
 }
 
 final class AddTodoSceneInteractor {
@@ -27,5 +27,7 @@ final class AddTodoSceneInteractor {
 }
 
 extension AddTodoSceneInteractor: AddTodoSceneInteractorInput {
-    
+    func tapAddButton(_ request: AddTodoSceneModel.AddTodo.Request) {
+        
+    }
 }
