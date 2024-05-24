@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 final class Todo: Hashable {
     var id: UUID
     var completed: Bool
