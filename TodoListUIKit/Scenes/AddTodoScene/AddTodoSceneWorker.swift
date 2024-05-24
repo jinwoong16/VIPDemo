@@ -13,7 +13,11 @@ protocol AddTodoSceneWorkerLogic {
 }
 
 final class AddTodoSceneWorker: AddTodoSceneWorkerLogic {
-//    private let databaseService ...
+    private let service: TodoService
+    
+    init(service: TodoService) {
+        self.service = service
+    }
     
     func createTodo(with body: String) async {
         let todo = Todo(completed: false, description: body)

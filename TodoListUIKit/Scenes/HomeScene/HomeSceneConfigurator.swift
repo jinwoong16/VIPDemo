@@ -8,12 +8,12 @@
 import Foundation
 
 protocol HomeSceneConfigurator {
-     func configure(_ viewController: HomeSceneViewController) -> HomeSceneViewController
+    func configure(_ viewController: HomeSceneViewController, service: TodoService) -> HomeSceneViewController
 }
 
 final class DefaultHomeSceneConfigurator: HomeSceneConfigurator {
-     func configure(_ viewController: HomeSceneViewController) -> HomeSceneViewController {
-         let worker = HomeSceneWorker()
+     func configure(_ viewController: HomeSceneViewController, service: TodoService) -> HomeSceneViewController {
+         let worker = HomeSceneWorker(service: service)
          let presenter = HomeScenePresenter(viewController: viewController)
          let interactor = HomeSceneInteractor(presenter: presenter, worker: worker)
 
