@@ -22,10 +22,7 @@ final class AddTodoSceneWorker: AddTodoSceneWorkerLogic {
     func createTodo(with body: String) async {
         let todo = Todo(completed: false, description: body)
         
-        /// Create todo in db using SwiftData
-        /// This work is asynchronous
-        /// WORK ....
-        ///
+        await service.write(with: todo)
         
         post(TodoNotification.todoDidAppend.notification, object: todo)
     }
