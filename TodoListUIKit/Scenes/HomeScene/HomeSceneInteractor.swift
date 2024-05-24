@@ -12,6 +12,7 @@ typealias HomeSceneInteractorInput = HomeSceneViewControllerOutput
 
 protocol HomeSceneInteractorOutput: AnyObject {
     func present(with response: HomeSceneModel.Fetch.Response)
+    func present(with response: HomeSceneModel.FetchAll.Response)
 }
 
 final class HomeSceneInteractor {
@@ -45,5 +46,12 @@ extension HomeSceneInteractor: HomeSceneInteractorInput {
         let todo = Todo(completed: false, description: "\(random)")
         
         presenter.present(with: .init(todo: todo))
+    }
+    
+    func viewDidLoad() {
+        Task { [weak self] in
+            let todos = await self?.worker.fetch()
+            self?.presenter.present(with: .init(todos: todos ?? []))
+        }
     }
 }

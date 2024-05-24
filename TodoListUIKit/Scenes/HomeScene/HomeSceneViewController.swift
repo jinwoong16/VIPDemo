@@ -13,6 +13,7 @@ protocol HomeSceneViewControllerInput: AnyObject {
 
 protocol HomeSceneViewControllerOutput: AnyObject {
     func tapAddTodoButton()
+    func viewDidLoad()
 }
 
 final class HomeSceneViewController: UIViewController {
@@ -47,6 +48,8 @@ final class HomeSceneViewController: UIViewController {
         configureUI()
         configureTableView()
         configureNavigationItems()
+        
+        interactor?.viewDidLoad()
     }
 
     // MARK: - Configure Components
